@@ -15,7 +15,14 @@ class main {
 
         $records = csv::getRecords($filename);
 
-        print_r($records);
+        $table = html::generateTable($records);
+
+        #   $record = recordFactory::create();
+        # print ('<table>');
+        print("<h1>Abi's Top Soccer Stars</h1>");
+        print("<p>I've been playing soccer since I was four years old all the way through college. Admiring some of the world's best players helped push me to the next skill level. </p>");
+        print($table);
+        
     }
 }
 
@@ -67,15 +74,15 @@ class record{
     public function createProperty($colname = 'first', $value = 'abi') {
 
         $this->{$colname} = $value;
-        
+
     }
 }
 
 class recordFactory {
 
-    public static function create(Array $array = null) {
+    public static function create(Array $fileNames = null, Array $values = null) {
 
-        $record = new record($array);
+        $record = new record($fieldNames, $values);
 
         return $record;
     }
