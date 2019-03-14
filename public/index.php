@@ -22,8 +22,51 @@ class main {
         print("<h1>Abi's Top Soccer Stars</h1>");
         print("<p>I've been playing soccer since I was four years old all the way through college. Admiring some of the world's best players helped push me to the next skill level. </p>");
         print($table);
-        
+
     }
+}
+
+class html{
+    public static function generateTable($records){
+
+        $count = 1;
+        $table1 = '';
+        $table1 .= "<html><head> <!-- Latest compiled and minified CSS -->
+        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\">
+        <!-- jQuery library -->
+        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script> </head><body><table class='table table-striped'>";
+
+
+        
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 class csv {
