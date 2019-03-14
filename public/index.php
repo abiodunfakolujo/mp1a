@@ -56,15 +56,18 @@ class record{
         $record = array_combine($fieldNames,$values);
         foreach ($record as $property => $value ){
             $this->createProperty($property, $value);
-        } FIX HERE
+        }
     }
 
+    public function returnArray() {
+        $array = (array)$this;
+        return $array;
+    }
 
-    public function createProperty($name = 'first', $value = 'abi') {
+    public function createProperty($colname = 'first', $value = 'abi') {
 
-        $this->{$name} = $value;
-
-
+        $this->{$colname} = $value;
+        
     }
 }
 
