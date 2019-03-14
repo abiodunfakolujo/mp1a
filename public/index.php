@@ -30,12 +30,24 @@ class csv {
         {
             $record = fgetcsv($file);
 
-            $records[] = $record;
+            $records[] = recordFactory::create();
 
         }
 
         fclose($file);
         return $records;
 
+    }
+}
+
+class record{}
+
+class recordFactory {
+
+    public static function create(Array $array = null) {
+
+        $record = new record();
+
+        return $record;
     }
 }
