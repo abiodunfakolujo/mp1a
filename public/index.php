@@ -38,8 +38,39 @@ class html{
         <!-- Latest compiled JavaScript -->
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script> </head><body><table class='table table-striped'>";
 
+        foreach ($records as $record){
 
-        
+
+            $array = $records->returnArray();
+            $fields = array_keys($array);
+            $values = array_values($array);
+
+            if ($count == 1) {
+                $table1 .= '<thead class="thead-dark"><tr>';
+                $table1 .= '<th scope = "col"></th>';
+                foreach ($fields as $s) {
+                    $table1 .= '<th scope = "col">';
+                    $table1 .= $s;
+                    $table1 .= '</th>';
+                }
+                $table1 .= '</tr></thead>';
+                $table1 .= '<tbody>';
+            }
+            $table1 .= '<tr><th scope = "row">';
+            $table1 .= (string)$count;
+            $table1 .= '</th>';
+            foreach($values as $s){
+                $table1 .= '<td>';
+                $table1 .= $s;
+                $table1 .= '</td>';
+            }
+            $table1 .= '</tr>';
+
+
+
+
+        }
+
 
 
 
