@@ -27,14 +27,19 @@ class csv {
         $file = fopen($filename, "r");
 
         $fieldNames = array();
-        
+
+        $count = 0;
 
 
         while(! feof($file))
         {
             $record = fgetcsv($file);
-
-            $records[] = recordFactory::create($record);
+            if($count == 0){
+                $fieldNames = $record;
+            } else{
+                $records[] = recordFactory::create($fieldNames, $record);
+            }
+            count++;
 
         }
 
