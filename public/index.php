@@ -41,7 +41,7 @@ class html{
         foreach ($records as $record){
 
 
-            $array = $records->returnArray();
+            $array = $record->returnArray();
             $fields = array_keys($array);
             $values = array_values($array);
 
@@ -66,39 +66,19 @@ class html{
             }
             $table1 .= '</tr>';
 
-
-
-
-        }
-
-
-
-
-
+            $count++;
 
         }
 
+        $table1 .= '</tbody></table>';
 
+        return $table1;
 
-
-
-
-
+        }
 
     }
 
 
-
-
-
-
-
-
-
-
-
-
-}
 
 class csv {
 
@@ -120,7 +100,7 @@ class csv {
             } else{
                 $records[] = recordFactory::create($fieldNames, $record);
             }
-            count++;
+            $count++;
 
         }
 
@@ -135,7 +115,7 @@ class record{
     public function __construct(Array $fieldNames = null, Array $values = null)
     {
         $record = array_combine($fieldNames,$values);
-        foreach ($record as $property => $value ){
+        foreach ($record as $property => $value) {
             $this->createProperty($property, $value);
         }
     }
@@ -154,7 +134,7 @@ class record{
 
 class recordFactory {
 
-    public static function create(Array $fileNames = null, Array $values = null) {
+    public static function create(Array $fieldNames = null, Array $values = null) {
 
         $record = new record($fieldNames, $values);
 
